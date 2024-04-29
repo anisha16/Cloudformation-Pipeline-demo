@@ -13,7 +13,6 @@ pipeline {
                 script {
                     dir('Cloudformation-Pipeline-demo') {
                         git branch: 'main',
-                        credentialsId: 'GITHUB_ACCESS_KEY',
                         url: 'git@github.com:anisha16/Cloudformation-Pipeline-demo.git'
                     }
                 }
