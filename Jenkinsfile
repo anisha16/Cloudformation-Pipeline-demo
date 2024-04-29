@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/anisha16/Cloudformation-Pipeline-demo.git'
+                git branch: 'main' , url: 'https://github.com/anisha16/Cloudformation-Pipeline-demo.git'
             }
         }
 
