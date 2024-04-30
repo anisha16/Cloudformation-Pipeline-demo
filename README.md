@@ -1,20 +1,22 @@
 # Cloudformation-Pipeline-demo
 
-Automation using Jenkins
-Problem Statement:
-
+**Problem Statement:**
 A Jenkins pipeline has been implemented to streamline the process of automatically creating CloudFormation stacks, which in turn deploy S3 buckets.
 
-Steps:
+The **s3.yaml** file conatins the cloudformation script to create an S3 bucket. 
+The **Jenkinsfile** create the stages of the Pipeline. 
+
+**Steps:**
 1.	Create an IAM user on AWS free tier account with the following policies 
 
  <img width="468" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/3582a2d8-2bfd-448b-b09e-ea0cb9c0ff4a">
 
-2.	Connect to an EC2 instance on AWS free tier. 
-3.	Run the following commands on the server to install java, jenkins and awscli. 
-   1.	sudo apt update
-   2.	sudo apt install openjdk-8-jdk -y
-   3.	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+2.	Connect to an EC2 instance on AWS free tier.
+3.	Run the following commands on the server to install java, jenkins and awscli.
+   
+   To install java-jdk
+   sudo apt install openjdk-8-jdk -y
+   sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
    4.	echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
    5.	https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
    /etc/apt/sources.list.d/jenkins.list > /dev/null
