@@ -2,5 +2,5 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: cf_bucket
+      BucketName: new_bucket
 
