@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment{
+	AWS_PROFILE = 'AKIAXYKJUXRYQDVIUHPM'
+    }
 
     stages {
         stage('Clone Repository') {
