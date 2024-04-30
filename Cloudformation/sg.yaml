@@ -2,5 +2,5 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: new_bucket
+      BucketName: new_jenkins_bucket
 
