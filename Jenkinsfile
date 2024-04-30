@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     sh "aws --version" // Check AWS CLI version
-                    sh "aws cloudformation create-stack --stack-name my-vpc-stack4 --template-body file://${env.CLOUDFORMATION_SCRIPT_VPC} --capabilities CAPABILITY_IAM"
+                    sh "aws cloudformation create-stack --stack-name my-vpc-stack5 --template-body file://${env.CLOUDFORMATION_SCRIPT_VPC} --capabilities CAPABILITY_IAM"
                 }
             }
         }
