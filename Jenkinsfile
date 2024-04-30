@@ -10,13 +10,13 @@ pipeline {
 
         stage('Create VPC') {
             steps {
-		sh '/usr/local/bin/aws cloudformation create-stack --stack-name my-vpc-stack --template-body file://cloudformation/vpc.yaml'
+		sh '/opt/homebrew/bin/aws cloudformation create-stack --stack-name my-vpc-stack --template-body file://cloudformation/vpc.yaml'
             }
         }
 
         stage('Create Security Group') {
             steps {
-                sh '/usr/local/bin/aws cloudformation create-stack --stack-name my-sg-stack --template-body file://cloudformation/sg.yaml'
+                sh '/opt/homebrew/bin/aws cloudformation create-stack --stack-name my-sg-stack --template-body file://cloudformation/sg.yaml'
             }
         }
     }
