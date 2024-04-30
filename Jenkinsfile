@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-	AWS_PROFILE = 'AKIAXYKJUXRYQDVIUHPM'
+	AWS_PROFILE = 'aws-jenkins'
     }
 
     stages {
