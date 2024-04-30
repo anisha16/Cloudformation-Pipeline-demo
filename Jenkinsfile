@@ -1,24 +1,30 @@
 pipeline {
     agent any
-    
     environment {
-        AWS_DEFAULT_REGION = 'us-east-1'
-        AWS_PROFILE = 'new-profile'
+        AWS_DEFAULT_REGION = "us-east-1"
+        GITHUB_REPO_URL = "https://github.com/anisha16/Cloudformation-Pipeline-demo.git"
+        CLOUDFORMATION_SCRIPT_VPC = "vpc.yaml"
+        CLOUDFORMATION_SCRIPT_S3 = "s3.yaml"
     }
-
     stages {
-        stage('Deploy VPC') {
+        stage("Clone Repository") {
             steps {
-                script {
-                    sh 'aws cloudformation create-stack --stack-name my-vpc-stack --template-body file://cloudformation/vpc.yaml'
+                git branch: 'main', url: "${env.GITHUB_REPO_URL}"
+            }
+        }
+        stage("Deploy VPC") {
+            steps {
+                withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    sh "aws --version" // Check AWS CLI version
+                    sh "aws cloudformation create-stack --stack-name my-vpc-stack3 --template-body file://${env.CLOUDFORMATION_SCRIPT_VPC} --capabilities CAPABILITY_IAM"
                 }
             }
         }
-
-        stage('Deploy S3 Bucket') {
+        stage("Deploy S3 Bucket") {
             steps {
-                script {
-                    sh 'aws cloudformation create-stack --stack-name my-s3-stack --template-body file://cloudformation/s3.yaml'
+                withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    sh "aws --version" // Check AWS CLI version
+                    sh "aws cloudformation create-stack --stack-name my-s3-stack3 --template-body file://${env.CLOUDFORMATION_SCRIPT_S3} --capabilities CAPABILITY_IAM"
                 }
             }
         }
