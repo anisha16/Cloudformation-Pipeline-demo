@@ -15,11 +15,16 @@ The **Jenkinsfile** create the stages of the Pipeline.
 3.	Run the following commands on the server to install java, jenkins and awscli.
    
    To install java-jdk
+   
    sudo apt install openjdk-8-jdk -y
+
+   Debian package repository of Jenkins to automate installation
+   <span style="font-size: larger;">This is larger text.</span>
+
    sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
-   4.	echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-   5.	https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-   /etc/apt/sources.list.d/jenkins.list > /dev/null
+   echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \ 
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
    6.sudo apt-get update
    7. sudo apt-get install fontconfig openjdk-17-jre
    8. sudo apt-get install jenkins
