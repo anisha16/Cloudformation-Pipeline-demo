@@ -5,7 +5,7 @@ pipeline {
         GITHUB_REPO_URL = "https://github.com/anisha16/Cloudformation-Pipeline-demo.git"
         CLOUDFORMATION_FOLDER = "Cloudformation"
         CLOUDFORMATION_SCRIPT_S3 = "${env.CLOUDFORMATION_FOLDER}/s3.yaml"
-        SNS_TOPIC_NAME = "MyCloudDemo" 
+        SNS_TEMPLATE_PATH = "${env.CLOUDFORMATION_FOLDER}/sns.yaml" // Define the path to sns.yaml
     }
     stages {
         stage("Clone Repository") {
@@ -15,8 +15,11 @@ pipeline {
         }
         stage("Create SNS Topic") {
             steps {
-                withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    sh "aws sns create-topic --name ${env.SNS_TOPIC_NAME}"
+                script {
+                    def snsTopicName = sh(script: "aws cloudformation describe-stacks --stack-name my-s3-stack12 --query 'Stacks[0].Parameters[?ParameterKey==`TopicName`].ParameterValue' --output text", returnStdout: true).trim()
+                    withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                        sh "aws cloudformation create-stack --stack-name my-sns-stack --template-body file://${env.SNS_TEMPLATE_PATH} --parameters ParameterKey=TopicName,ParameterValue=${snsTopicName}"
+                    }
                 }
             }
         }
@@ -24,7 +27,7 @@ pipeline {
             steps {
                 withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     sh "aws --version" // Check AWS CLI version
-                    sh "aws cloudformation create-stack --stack-name my-s3-stack11 --template-body file://${env.CLOUDFORMATION_SCRIPT_S3} --capabilities CAPABILITY_IAM"
+                    sh "aws cloudformation create-stack --stack-name my-s3-stack12 --template-body file://${env.CLOUDFORMATION_SCRIPT_S3} --capabilities CAPABILITY_IAM"
                 }
             }
         }
