@@ -4,7 +4,6 @@ pipeline {
         AWS_DEFAULT_REGION = "us-east-1"
         GITHUB_REPO_URL = "https://github.com/anisha16/Cloudformation-Pipeline-demo.git"
         CLOUDFORMATION_FOLDER = "Cloudformation"
-        CLOUDFORMATION_SCRIPT_VPC = "${env.CLOUDFORMATION_FOLDER}/vpc.yaml"
         CLOUDFORMATION_SCRIPT_S3 = "${env.CLOUDFORMATION_FOLDER}/sg.yaml"
     }
     stages {
