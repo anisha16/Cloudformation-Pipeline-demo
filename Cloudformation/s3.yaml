@@ -1,5 +1,5 @@
 Resources:
-  MyNewRenamedS3Bucket:
+  MyNewJenkinsS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: mynewrenamedjenkinsbucket
+      BucketName: mynewjenkinss3bucket
