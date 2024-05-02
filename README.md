@@ -110,7 +110,7 @@ sudo systemctl status jenkins
 
 7. The Pipeline will run successfully. A cloudformation stack will be successfully created and a bucket will be created.
 
-<img width="942" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/d7cd8f75-5ffb-4030-8f37-124b4d1e81a8">
+  <img width="995" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/b6145820-8141-4879-9707-6848a0ea92f8">
 
 Verifying the creation of stack on AWS.
 
