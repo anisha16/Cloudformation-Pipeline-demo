@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        sh "aws cloudformation create-stack --stack-name my-sns-stack1 --template-body file://${env.CLOUDFORMATION_SCRIPT_SNS}"
+                        sh "aws cloudformation create-stack --stack-name my-sns-stack2 --template-body file://${env.CLOUDFORMATION_SCRIPT_SNS}"
                     }
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                     sh "aws --version" // Check AWS CLI version
-                    sh "aws cloudformation create-stack --stack-name my-s3-stack13 --template-body file://${env.CLOUDFORMATION_SCRIPT_S3} --capabilities CAPABILITY_IAM"
+                    sh "aws cloudformation create-stack --stack-name my-s3-stack14 --template-body file://${env.CLOUDFORMATION_SCRIPT_S3} --capabilities CAPABILITY_IAM"
                 }
             }
         }
