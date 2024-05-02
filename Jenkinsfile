@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        sh "aws cloudformation create-stack --stack-name my-sns-stack --template-body file://${env.CLOUDFORMATION_SCRIPT_SNS} --parameters ParameterKey=TopicName,ParameterValue=${env.SNS_TOPIC_NAME}"
+                        sh "aws cloudformation create-stack --stack-name my-sns-stack --template-body file://${env.CLOUDFORMATION_SCRIPT_SNS}"
                     }
                 }
             }
