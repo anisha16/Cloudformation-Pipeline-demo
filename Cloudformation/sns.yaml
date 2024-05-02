@@ -1,0 +1,6 @@
+Resources:
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: MyCloudDemo
+      TopicName: MyCloudDemo
