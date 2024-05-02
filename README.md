@@ -3,9 +3,9 @@
 **Problem Statement:**
 A Jenkins pipeline has been implemented to automate the process of creating CloudFormation stacks, which in turn deploy S3 buckets.
 
-**Continuous Integration (CI)**: This is the practice of frequently integrating code changes into a shared repository, typically several times a day. Each integration triggers an automated build and test process to validate the changes. CI helps identify and address integration issues early in the development cycle, ensuring that the codebase remains stable and consistent.
+**Continuous Integration (CI)**: This is the practice of frequently integrating code changes into a shared repository. Each integration triggers an automated build and test process to validate the changes. 
 
-**Continuous Delivery (CD)**: This extends CI by automating the deployment process so that every validated change to the codebase can be reliably deployed to production or production-like environments. CD ensures that software updates are always in a deployable state, allowing teams to release new features, fixes, and improvements quickly and with minimal risk.
+**Continuous Delivery (CD)**: This extends CI by automating the deployment process so that every validated change to the codebase can be reliably deployed to production or production-like environments. 
 
 **Pipeline**: The CI/CD pipeline is a sequence of automated steps or stages that code changes go through, from version control to deployment. Each stage in the pipeline performs specific tasks such as compiling code, running tests, building artifacts, and deploying applications. The pipeline ensures that code changes are automatically validated and promoted through various environments (e.g., development, staging, production) before reaching end-users.
 
