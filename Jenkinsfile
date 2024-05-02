@@ -5,7 +5,8 @@ pipeline {
         GITHUB_REPO_URL = "https://github.com/anisha16/Cloudformation-Pipeline-demo.git"
         CLOUDFORMATION_FOLDER = "Cloudformation"
         CLOUDFORMATION_SCRIPT_S3 = "${env.CLOUDFORMATION_FOLDER}/s3.yaml"
-        SNS_TOPIC_NAME = "CloudDemoTopic" // Define the SNS topic name
+        CLOUDFORMATION_SCRIPT_SNS = "${env.CLOUDFORMATION_FOLDER}/sns.yaml"
+        SNS_TOPIC_NAME = "MyCloudDemo" // Define the SNS topic name
     }
     stages {
         stage("Clone Repository") {
@@ -17,7 +18,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([aws(credentialsId: 'jenkins-cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        sh "aws cloudformation create-stack --stack-name my-sns-stack --template-body file://sns.yaml --parameters ParameterKey=TopicName,ParameterValue=${env.SNS_TOPIC_NAME}"
+                        sh "aws cloudformation create-stack --stack-name my-sns-stack --template-body file://${env.CLOUDFORMATION_SCRIPT_SNS} --parameters ParameterKey=TopicName,ParameterValue=${env.SNS_TOPIC_NAME}"
                     }
                 }
             }
