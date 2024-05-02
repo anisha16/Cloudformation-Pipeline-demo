@@ -120,9 +120,11 @@ Verifying the creation of stack on AWS.
 
 
 3. A bucket is created successfully.
-<img width="615" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/de8b7eef-0778-44bb-b18e-f1402f34cbd3">
+   
+   <img width="615" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/de8b7eef-0778-44bb-b18e-f1402f34cbd3">
 
-4. SNS Topic is created
+5. SNS Topic is created
+   
    <img width="545" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/55b641bb-1171-464f-a459-2cdf520797f2">
 
 
