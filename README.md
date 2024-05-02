@@ -3,6 +3,8 @@
 **Problem Statement:**
 A Jenkins pipeline has been implemented to automate the process of creating CloudFormation stacks, which in turn deploy S3 buckets.
 
+**CloudFormation**: CloudFormation is a service provided by Amazon Web Services (AWS) that allows you to define and deploy infrastructure as code.
+
 The **s3.yaml** file contains the cloudformation script to create an S3 bucket. 
 
 The **Jenkinsfile** create the stages of the Pipeline. 
