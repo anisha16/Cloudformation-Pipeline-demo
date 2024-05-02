@@ -7,7 +7,7 @@ pipeline {
         CLOUDFORMATION_SCRIPT_S3 = "${env.CLOUDFORMATION_FOLDER}/s3.yaml"
         SNS_TEMPLATE_PATH = "${env.CLOUDFORMATION_FOLDER}/sns.yaml" // Define the path to sns.yaml
     }
-   
+    stages {
         stage("Clone Repository") {
             steps {
                 git branch: 'main', url: "${env.GITHUB_REPO_URL}"
