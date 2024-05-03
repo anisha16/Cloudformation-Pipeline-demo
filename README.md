@@ -34,6 +34,8 @@ The **Jenkinsfile** create the stages of the Pipeline.
    ```
 
    **Debian package repository of Jenkins to automate installation**
+   This script sets up the system to trust the Jenkins repository by downloading and adding the Jenkins GPG key, and then adds the Jenkins repository to the list of package sources used by   
+   our package manager.
   
   ```
   sudo wget -O /usr/share/keyrings/jenkins-keyring.asc  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
