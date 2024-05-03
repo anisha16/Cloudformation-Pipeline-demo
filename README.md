@@ -3,10 +3,6 @@
 **Problem Statement:**
 A Jenkins pipeline has been implemented to automate the process of creating CloudFormation stacks, which in turn deploy S3 buckets and create SNS topics. 
 
-**Continuous Integration (CI)**: This is the practice of frequently integrating code changes into a shared repository. Each integration triggers an automated build and test process to validate the changes. 
-
-**Continuous Delivery (CD)**: This extends CI by automating the deployment process so that every validated change to the codebase can be reliably deployed to production or production-like environments. 
-
 **Pipeline**: The CI/CD pipeline is a sequence of automated steps or stages that code changes go through, from version control to deployment. Each stage in the pipeline performs specific tasks such as compiling code, running tests, building artifacts, and deploying applications. The pipeline ensures that code changes are automatically validated and promoted through various environments (e.g., development, staging, production) before reaching end-users.
 
 **CloudFormation**: CloudFormation is a service provided by Amazon Web Services (AWS) that allows us to define and deploy infrastructure as code. By defining infrastructure in CloudFormation templates, we can achieve scalability, and efficiency in deploying and managing our cloud resources. 
@@ -14,6 +10,7 @@ A Jenkins pipeline has been implemented to automate the process of creating Clou
 **SNS Topics** : SNS (Simple Notification Service) is a fully managed messaging service provided by Amazon Web Services (AWS). It enables us to send notifications or messages to a variety of endpoints or subscribers, such as email addresses, mobile devices, HTTP endpoints, AWS Lambda functions, SQS (Simple Queue Service) queues, and more.
 
 The **s3.yaml** file contains the cloudformation template to create an S3 bucket. 
+
 The **sns.yaml** file contains the cloudformation template to create an sns topic. 
 
 
