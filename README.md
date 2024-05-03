@@ -117,6 +117,9 @@ sudo systemctl status jenkins
   <img width="995" alt="image" src="https://github.com/anisha16/Cloudformation-Pipeline-demo/assets/53351266/b6145820-8141-4879-9707-6848a0ea92f8">
   
 
+
+
+
 **Verifying the creation of stack on AWS.**
 
 1. A cloudformation stack is created on AWS which will now create a bucket on AWS S3
