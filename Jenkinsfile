@@ -6,7 +6,6 @@ pipeline {
         CLOUDFORMATION_FOLDER = "Cloudformation"
         CLOUDFORMATION_SCRIPT_S3 = "${env.CLOUDFORMATION_FOLDER}/s3.yaml"
         CLOUDFORMATION_SCRIPT_SNS = "${env.CLOUDFORMATION_FOLDER}/sns.yaml"
-        SNS_TOPIC_NAME = "MyCloudDemo" // Define the SNS topic name
     }
     stages {
         stage("Clone Repository") {
