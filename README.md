@@ -13,7 +13,9 @@ A Jenkins pipeline has been implemented to automate the process of creating Clou
 
 **SNS Topics** : SNS (Simple Notification Service) is a fully managed messaging service provided by Amazon Web Services (AWS). It enables us to send notifications or messages to a variety of endpoints or subscribers, such as email addresses, mobile devices, HTTP endpoints, AWS Lambda functions, SQS (Simple Queue Service) queues, and more.
 
-The **s3.yaml** file contains the cloudformation script to create an S3 bucket. 
+The **s3.yaml** file contains the cloudformation template to create an S3 bucket. 
+The **sns.yaml** file contains the cloudformation template to create an sns topic. 
+
 
 The **Jenkinsfile** create the stages of the Pipeline. 
 
